@@ -1,0 +1,13 @@
+# use maven as a builder image to separate the compile step from our deployment image
+FROM maven:3.8.1-openjdk-17-slim AS builder
+WORKDIR GroceryExpress
+COPY ./ ./
+RUN mvn clean install -DskipTests
+
+FROM openjdk:17-slim AS backend
+WORKDIR GroceryExpress
+# copy the jar from the builder image to the final image
+COPY --from=builder /GroceryExpress/target/GroceryExpress-0.0.1-SNAPSHOT.jar /GroceryExpress/GroceryExpress-0.0.1-SNAPSHOT.jar
+EXPOSE 8080
+CMD ["java", "-jar", "/GroceryExpress/GroceryExpress-0.0.1-SNAPSHOT.jar"]
+

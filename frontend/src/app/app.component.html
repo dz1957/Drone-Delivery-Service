@@ -1,0 +1,210 @@
+<div class="container">
+  <h1>Grocery Express Team 30</h1>
+
+  <!-- New section for Make and Display Store -->
+  <div class="form-section">
+    <label for="storeName">Make and Display Store</label>
+    <input type="text" id="storeName" placeholder="storeName" #storeName>
+    <input type="number" placeholder="initialValue" #initialValue>
+    <input type="number" placeholder="initialX" #initialX>
+    <input type="number" placeholder="initialY" #initialY>
+    <button (click)="createStore(storeName.value,  +initialValue.value, +initialX.value, +initialY.value)">Create Store</button>
+    <button (click)="displayStores()">Display Stores</button>
+  </div>
+
+  <!-- New section for selling and displaying items -->
+  <div class="form-section">
+    <label for="itemName">Sell and Display Item</label>
+    <input type="text" id="storeNameForItem" placeholder="Store Name" #storeNameForItem>
+    <input type="text" id="itemName" placeholder="Item Name" #itemName>
+    <input type="text" placeholder="Weight" #weight>
+    <button (click)="sellItem(storeNameForItem.value, itemName.value, weight.value)">Sell Item</button>
+    <button (click)="displayItems(storeName.value)">Display Items</button>
+  </div>
+
+  <!-- Make and Display Pilots Section -->
+  <div class="form-section">
+    <label for="pilotAccount">Make and Display Pilots</label>
+    <input type="text" id="pilotAccount" placeholder="Pilot Account" #pilotAccount>
+    <input type="text" placeholder="First Name" #firstName>
+    <input type="text" placeholder="Last Name" #lastName>
+    <input type="text" placeholder="Phone Number" #phoneNumber>
+    <input type="text" placeholder="Tax ID" #taxId>
+    <input type="text" placeholder="License ID" #licenseId>
+    <input type="number" placeholder="Experience Level" #expLevel>
+    <button (click)="makePilot(pilotAccount.value, firstName.value, lastName.value, phoneNumber.value, taxId.value, licenseId.value, +expLevel.value)">Make Pilot</button>
+    <button (click)="displayPilots()">Display Pilots</button>
+  </div>
+
+  <!-- Make Drone Column -->
+  <div class="form-section">
+    <label for="makeDrone">Make and Display Drone</label>
+    <input type="text" id="storeNameForDrone" placeholder="Store Name" #storeNameForDrone>
+    <input type="text" id="droneId" placeholder="Drone ID" #droneId>
+    <input type="number" placeholder="Lifting Capacity" #liftingCapacity>
+    <input type="number" placeholder="Fuel" #fuel>
+    <input type="number" placeholder="Fuel Capacity" #fuelCapacity>
+    <input type="number" placeholder="Fuel Rate" #fuelRate>
+    <input type="number" placeholder="Refueling Rate" #refuelingRate>
+    <input type="number" placeholder="Speed" #speed>
+    <button (click)="makeDrone(
+      storeNameForDrone.value,
+      droneId.value,
+      +liftingCapacity.value,
+      +fuel.value,
+      +fuelCapacity.value,
+      +fuelRate.value,
+      +refuelingRate.value,
+      +speed.value
+    )">Make Drone</button>
+    <button (click)="displayDrones(storeNameForDrone.value)">Display Drones</button>
+  </div>
+
+  <!-- Fly Drone Column -->
+  <div class="form-section">
+    <label for="flyDrone">Fly Drone</label>
+    <!-- Add inputs for flying drones here if needed -->
+    <input type="text" id="storeNameForDrone" placeholder="Store Name" #storeNameForDrone>
+    <input type="text" id="droneIdToFly" placeholder="Drone ID to Fly" #droneIdToFly>
+    <input type="text" id="pilotIdToFly" placeholder="Pilot ID to Fly" #pilotIdToFly>
+    <button (click)="flyDrone(
+      storeNameForDrone.value,
+      droneIdToFly.value,
+      pilotIdToFly.value
+    )">Fly Drone</button>
+    <button (click)="displayDrones(storeNameForDrone.value)">Display Drones</button>
+  </div>
+
+  <!-- New section for Make and Display Customer -->
+  <div class="form-section">
+    <label for="customerDetails">Make and Display Customer</label>
+    <input type="text" id="account" placeholder="Account" #account>
+    <input type="text" placeholder="First Name" #firstName>
+    <input type="text" placeholder="Last Name" #lastName>
+    <input type="text" placeholder="Phone Number" #phoneNumber>
+    <input type="number" placeholder="Rating" #rating>
+    <input type="number" placeholder="Credit" #credit>
+    <input type="number" placeholder="X Coordinate" #xCoord>
+    <input type="number" placeholder="Y Coordinate" #yCoord>
+    <button (click)="createCustomer(account.value, firstName.value, lastName.value, phoneNumber.value, +rating.value, +credit.value, +xCoord.value, +yCoord.value)">Create Customer</button>
+    <button (click)="displayCustomers()">Display Customers</button>
+  </div>
+
+  <!-- New section for Start and Display Order -->
+  <div class="form-section">
+    <label for="orderDetails">Start and Display Order</label>
+    <input type="text" id="storeName" placeholder="Store Name" #storeName>
+    <input type="text" placeholder="Order ID" #orderId>
+    <input type="text" placeholder="Drone ID" #droneId>
+    <input type="text" placeholder="Customer Account" #customerAccount>
+    <button (click)="startOrder(storeName.value, orderId.value, droneId.value, customerAccount.value)">Start Order</button>
+    <input type="text" id="displayStoreName" placeholder="Store Name for Display" #displayStoreName>
+    <button (click)="displayOrders(displayStoreName.value)">Display Orders</button>
+  </div>
+
+  <!-- New section for Request Item -->
+  <div class="form-section">
+    <label for="itemDetails">Request Item</label>
+    <input type="text" id="storeName" placeholder="Store Name" #reqStoreName>
+    <input type="text" placeholder="Order ID" #reqOrderId>
+    <input type="text" placeholder="Item ID" #itemId>
+    <input type="number" placeholder="Quantity" #quantity>
+    <input type="number" placeholder="Unit Price" #unitPrice>
+    <button (click)="requestItem(reqStoreName.value, reqOrderId.value, itemId.value, +quantity.value, +unitPrice.value)">Request Item</button>
+  </div>
+
+  <!-- Section for Purchase and Cancel Order -->
+  <div class="form-section">
+    <label for="purchaseCancelDetails">Purchase and Cancel Order</label>
+    <input type="text" id="pcStoreName" placeholder="Store Name" #pcStoreName>
+    <input type="text" placeholder="Order ID" #pcOrderId>
+    <button (click)="purchaseOrder(pcStoreName.value, pcOrderId.value)">Purchase Order</button>
+    <button (click)="cancelOrder(pcStoreName.value, pcOrderId.value)">Cancel Order</button>
+  </div>
+
+  <!-- Section for Transfer Order -->
+  <div class="form-section">
+    <label for="transferDetails">Transfer Order</label>
+    <input type="text" id="trStoreName" placeholder="Store Name" #trStoreName>
+    <input type="text" placeholder="Order ID" #trOrderId>
+    <input type="number" placeholder="New Drone ID" #newDroneId>
+    <button (click)="transferOrder(trStoreName.value, trOrderId.value, +newDroneId.value)">Transfer Order</button>
+  </div>
+
+  <!-- Section for Requesting Return -->
+  <div class="form-section">
+    <label for="storeNameReturn">Request Return</label>
+    <input type="text" id="storeNameReturn" placeholder="Store Name" #storeNameReturn>
+    <input type="text" placeholder="Order ID" #orderIdReturn>
+    <input type="text" placeholder="Customer Account" #customerAccountReturn>
+    <input type="text" placeholder="Drone ID" #droneIdReturn>
+    <input type="number" placeholder="Return Window" #returnWindow>
+    <input type="number" placeholder="Max Returnable Orders" #maxReturnableOrders>
+    <!-- Input for item and quantity -->
+    <input type="text" placeholder="Item,Quantity" #itemAndQtyInput>
+    <button (click)="requestReturn(
+      storeNameReturn.value,
+      orderIdReturn.value,
+      customerAccountReturn.value,
+      droneIdReturn.value,
+      +returnWindow.value, 
+      +maxReturnableOrders.value,
+      itemAndQtyInput.value
+    )">Request Return</button>
+  </div>
+
+
+  <!-- Section for Setting Refueling Rate -->
+  <div class="form-section">
+    <label for="storeName">Set Refueling Rate</label>
+    <input type="text" id="storeNameRefuel" placeholder="Store Name" #storeNameRefuel>
+    <input type="text" placeholder="Drone ID" #droneIdRefuel>
+    <input type="number" placeholder="Refueling Rate" #refuelingRate>
+    <button (click)="setRefuelingRate(storeNameRefuel.value, droneIdRefuel.value, +refuelingRate.value)">Set Refueling Rate</button>
+  </div>
+
+  <!-- Section for Setting Fuel Rate -->
+  <div class="form-section">
+    <label for="storeName">Set Fuel Rate</label>
+    <input type="text" id="storeNameFuel" placeholder="Store Name" #storeNameFuel>
+    <input type="text" placeholder="Drone ID" #droneIdFuel>
+    <input type="number" placeholder="Fuel Rate" #fuelRate>
+    <button (click)="setFuelRate(storeNameFuel.value, droneIdFuel.value, +fuelRate.value)">Set Fuel Rate</button>
+  </div>
+
+  <!-- Section for Display Efficiency -->
+  <div class="form-section">
+    <label for="efficiencyDetails">Display Efficiency</label>
+    <button (click)="displayEfficiency()">Display Efficiency</button>
+  </div>
+
+  <!-- Section for Display Time -->
+  <div class="form-section">
+    <label for="timeDetails">Display Time</label>
+    <button (click)="displayTime()">Display Time</button>
+  </div>
+
+
+  <div class="response-area">
+    <label>Current Response</label>
+    <div class="response-box">
+      {{ currentResponse }}
+    </div>
+  </div>
+
+  <div class="history-area">
+    <label>History</label>
+    <div class="history-box">
+      <ul>
+        <li *ngFor="let entry of history$ | async">
+          Params: {{ entry.params }}, Response: {{ entry.response }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom-buttons">
+    <button (click)="refreshHistory()">Refresh History</button>
+    <button (click)="resetHistory()">Reset</button>
+  </div>  
+</div>

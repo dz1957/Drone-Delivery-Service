@@ -1,0 +1,121 @@
+/* Reset styles for consistent rendering */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    margin-bottom: 20px; /* Adjust space below the header */
+  }
+  
+  /* Section for creating and displaying stores */
+  .form-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;  /* This will align items vertically */
+    margin-bottom: 20px;
+  }
+  
+  .form-section label {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Style adjustments for input fields */
+  .form-section input[type="text"],
+  .form-section input[type="number"] {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1; /* Inputs use available space */
+  }
+  
+  /* Styles to align buttons with input fields */
+  .form-section button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Remove flex: none; to allow alignment */
+    margin-bottom: 0; /* Set to 0 to align with input fields */
+  }
+  
+  .form-section button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Response and history section styles */
+  .response-area,
+  .history-area {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+  
+  .response-box,
+  .history-box {
+    height: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+    overflow-y: auto;
+  }
+  
+  /* Bottom buttons alignment */
+  .bottom-buttons {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    .form-section input,
+    .form-section button {
+      width: 100%;
+      margin-right: 0;
+    }
+  
+    .form-section {
+      flex-direction: column;
+    }
+  
+    .bottom-buttons {
+      flex-direction: column;
+    }
+  }
+  
+  /* Focus styles for accessibility */
+  .form-section input:focus,
+  .form-section button:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Additional style adjustments */
+  .form-section:last-of-type {
+    justify-content: space-between;
+  }
+
+  /* Adjust the gap between buttons */
+.form-section button:not(:last-child) {
+    margin-right: 10px; /* Space between buttons */
+  }
+  
