@@ -35,8 +35,6 @@ In addition to the `/random` endpoint, there is a `/list` endpoint which simply 
 
 A lot of this backend uses the [Spring Boot](https://spring.io/projects/spring-boot) framework. Take a look at the documentation to familiarize yourself with it.
 
-# Database
-The database is postgres 9.6.12. This should be sufficient for most student use cases.
 
 # Maven 
 This project uses [Apache Maven](https://maven.apache.org/) to manage itself. 
