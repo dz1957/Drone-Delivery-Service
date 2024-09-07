@@ -1,10 +1,8 @@
 # Drone Delivery Service
 We designed and developed a system to monitor deliveries of grocery items to customers. We built a multi-container docker application, scaling by starting
 multiple instances/containers of DeliveryService and using Nginx to distribute traffic. When a large amount of REST API requests come into the system, Nginx will load balancing the
-requests across the DeliveryService containers to achieve high scalability.
-
-Docker containers are lightweight and portable, making them easy to scale. Nginxload balancing can further improve scalability by distributing traffic across multiple instances of
-DeliveryService to handle a large number of concurrent requests
+requests across the DeliveryService containers to achieve high scalability. Docker containers will be used to make them easy to scale. Nginx load balancing can further improve scalability by distributing traffic across multiple instances of
+DeliveryService to handle a large number of concurrent requests.
 
 # Quickstart
 We can simply run `make && make up` to start our service. For those that do not have `make` installed, we can effectively do the same thing by running the following:
