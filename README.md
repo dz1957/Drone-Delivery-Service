@@ -1,9 +1,10 @@
-# Example Dockerized Java Service
+# Drone Delivery Service
+We designed and developed a system to monitor deliveries of grocery items to customers. We built a multi-container docker application, scaling by starting
+multiple instances/containers of DeliveryService and using Nginx to distribute traffic. When a large amount of REST API requests come into the system, Nginx will load balancing the
+requests across the DeliveryService containers to achieve high scalability.
 
-This repository contains an example Java service to help get your group project started.
-It contains two Docker separate service to demonstrate a how we may deploy a separate service for an application server and a front end service. In this example, we have a simple Java backend that uses [Spring Boot](https://spring.io/projects/spring-boot) as our web service framework, and an [nginx](https://www.nginx.com/) web server that serves our html file.
-
-For your convenience we have defined a [docker-compose](https://docs.docker.com/compose/) file to help define our application and orchestrate the deployment locally, as well as a [Makefile](https://www.gnu.org/software/make/manual/make.html) that effectively wraps some build commands for you.
+Docker containers are lightweight and portable, making them easy to scale. Nginxload balancing can further improve scalability by distributing traffic across multiple instances of
+DeliveryService to handle a large number of concurrent requests
 
 # Quickstart
 We can simply run `make && make up` to start our service. For those that do not have `make` installed, we can effectively do the same thing by running the following:
